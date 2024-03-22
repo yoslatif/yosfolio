@@ -6,7 +6,16 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  --classic-texture: url('/newimptest.jpeg');
+  --earth-tone-1: #A47854; /* Warm Earth Tone */
+  --earth-tone-2: #D3A87C; /* Light Earth Tone */
+  --modern-accent-1: #2D2D2D; /* Dark Accent for Modern Contrast */
+  --modern-accent-2: #E0E0E0; /* Light Accent for Modern Feel */
+  --font-family-header: 'Times New Roman', serif; /* Renaissance-like font */
+  --font-family-body: 'Arial', sans-serif; /* Modern font */
 }
+
+
 
 @media (prefers-color-scheme: dark) {
   :root {
@@ -16,7 +25,7 @@
   }
 }
 
-body {
+/* body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
       to bottom,
@@ -24,10 +33,36 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+} */
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    ),
+    var(--classic-texture),
+    rgb(var(--background-start-rgb));
+  font-family: var(--font-family-body);
 }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-family-header);
+  color: var(--earth-tone-1);
+}
+
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+
+.project-frame {
+  padding: 10px;
+  border: 5px solid var(--earth-tone-2);
+  box-shadow: 4px 4px 8px var(--modern-accent-1);
+  background: var(--classic-texture);
 }

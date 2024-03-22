@@ -39,3 +39,34 @@
 // };
 
 // export default ProjectsSection;
+
+
+
+
+
+
+"use client";
+import React from 'react';
+import AnimatedProject from './AnimatedProj';
+
+const ProjectSection = () => {
+  // Your projects data might come from a list or however you have them stored
+  const projects = [
+    // Example project data
+    { src: '/path_to_project_image.jpg', alt: 'Project 1' },
+    // ...other projects
+  ];
+
+  return (
+    <section>
+      {/* Map through your projects and create an animated image for each */}
+      {projects.map((project, index) => (
+        <div key={index} className="project-frame">
+          <AnimatedProject src="/projects/newimptest.jpeg" alt="Description of Image" />
+        </div>
+      ))}
+    </section>
+  );
+};
+
+export default ProjectSection;
