@@ -11,7 +11,7 @@ const AboutSection = () => {
       <div className="max-w-4xl mx-auto">
         <h2 className="text-3xl font-bold mb-4">About Me</h2>
         <p className="mb-4">
-        I'm a full-stack developer with a passion for blending the worlds of coding and art. I bring a creative approach to my projects, aiming to make the web a more engaging and beautiful place.
+        I am a full-stack developer with a passion for blending the worlds of coding and art. I bring a creative approach to my projects, aiming to make the web a more engaging and beautiful place.
         </p>
         <p className="mb-4">
         My interest in coding was sparked after I noticed many parallels to chess, a game I have a lifelong passion for. I am at my best when I get the opportunity to think deeply about complex puzzles and turn creative ideas into reality. I have a diverse background, from studying Psychology and Neuroscience at UC San Diego, to working as a Technical Recruiter and a Chess Mentor, and I often draw from my diverse experiences to provide unique insights towards into I work on.
