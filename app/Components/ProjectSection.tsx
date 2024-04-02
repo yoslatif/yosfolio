@@ -75,6 +75,8 @@
 import React, { useEffect, useState } from 'react';
 import AnimatedProject from './AnimatedProj';
 import Image from 'next/image';
+// import { HeroParallax } from './ui/hero-parallax';
+// import { langlogos } from '../../langlogos.json';
 
 // Assume we have the projects data loaded from a JSON as shown previously
 const ProjectSection = () => {
@@ -98,6 +100,15 @@ const ProjectSection = () => {
     }
     // Add more projects as needed
   ];
+
+  // const langlogos = [
+  //   { name: "Python", image: "/PythonLogo.png" },
+  //   { name: "JavaScript", image: "/JavaScriptLogo.png" },
+  //   { name: "React", image: "/ReactLogo.png" },
+  //   { name: "Redux", image: "/ReduxLogo.png" },
+  //   { name: "Flask", image: "/FlaskLogo.png" },
+  //   { name: "PostgreSQL", image: "/PostgresLogo.png" }
+  // ]
 
   return (
     <section className="grid grid-cols-1 md:grid-cols-2 gap-4">

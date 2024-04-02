@@ -4,11 +4,11 @@
 
 :root {
   --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --background-start-rgb: 104, 139, 120;
+  --background-end-rgb: 232, 223, 223;
   --classic-texture: url('/newimptest.jpeg');
-  --earth-tone-1: #A47854; /* Warm Earth Tone */
-  --earth-tone-2: #D3A87C; /* Light Earth Tone */
+  --earth-tone-1: #e226ff; /* Warm Earth Tone */
+  --earth-tone-2: #126921; /* Light Earth Tone */
   --modern-accent-1: #2D2D2D; /* Dark Accent for Modern Contrast */
   --modern-accent-2: #E0E0E0; /* Light Accent for Modern Feel */
   --font-family-header: 'Times New Roman', serif; /* Renaissance-like font */
@@ -65,4 +65,22 @@ h1, h2, h3, h4, h5, h6 {
   border: 5px solid var(--earth-tone-2);
   box-shadow: 4px 4px 8px var(--modern-accent-1);
   background: var(--classic-texture);
+}
+
+
+.ripple {
+  position: relative;
+  border-radius: 50%;
+  transform: scale(0);
+  animation: ripple-animation 1.5s linear forwards;
+  pointer-events: none;
+  mix-blend-mode: soft-light;
+  background: rgba(255, 255, 255, 0.7); /* Light color for visibility */
+}
+
+@keyframes ripple-animation {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
 }

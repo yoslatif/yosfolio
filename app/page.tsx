@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { use } from 'react';
 import Image from 'next/image';
-import Layout from './layout';
+
 
 const Home: React.FC = () => {
   return (
@@ -13,7 +13,7 @@ const Home: React.FC = () => {
         <Image src="/yosimg.jpeg" alt="Profile Picture" width={244} height={244} className="square-full mx-auto" />
         <h1 className="text-4xl font-bold mt-6">Yoseph Latif</h1>
         <p className="font-light text-xl">Fullstack Developer</p>
-        <p className="mt-4">I hate bugs 🐜</p>
+        <p className="mt-4">It is me.</p>
       </section>
 
       {/* ...rest of the sections go here */}

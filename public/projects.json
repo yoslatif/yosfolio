@@ -1,18 +1,18 @@
 [
     {
-      "id": 1,
-      "title": "Project Name",
-      "description": "Brief description of the project.",
-      "technologies": ["Technology 1", "Technology 2"],
-      "image": "/path_to_project_image.jpg",
-      "link": "http://project-link.com"
-    },
-    {
+        "id": 1,
+        "title": "Parmazon",
+        "description": "Parmazon Prime, built with a PostgreSQL Flask backend and a React/Redux frontend, is a delectable twist on the shopping experience, bringing the charm of Amazon to the world of artisanal cheeses. This platform allows users to easily explore and order an array of gourmet options with the same ease and reliability as their favorite online marketplace.",
+        "technologies": ["Flask", "React", "SQL"],
+        "image": "/ParmazonImg.png",
+        "link": "https://parmazon-prime.onrender.com/"
+      },
+      {
         "id": 2,
-        "title": "Project Name",
-        "description": "Brief description of the project.",
-        "technologies": ["Technology 1", "Technology 2"],
-        "image": "/path_to_project_image.jpg",
-        "link": "http://project-link.com"
-    }
+        "title": "Philosophize",
+        "description": "brief description of the project",
+        "technologies": ["React", "Flask", "SQL"],
+        "image": "/PhilosophizeImg.png",
+        "link": "https://philosophize.onrender.com/"
+      }
   ]

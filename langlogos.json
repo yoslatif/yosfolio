@@ -1,0 +1,54 @@
+{
+  "langlogos": [
+    {
+      "id": 1,
+      "name": "python",
+      "path": "/LanguageLogos/pythonLogo.png"
+    },
+    {
+      "id": 2,
+      "name": "flask",
+      "path": "/LanguageLogos/flaskLogo.png"
+    },
+    {
+      "id": 3,
+      "name": "javascript",
+      "path": "/LanguageLogos/javascriptLogo.png"
+    },
+    {
+        "id": 4,
+        "name": "react",
+        "path": "/LanguageLogos/reactLogo.png"
+    },
+    {
+        "id": 5,
+        "name": "node",
+        "path": "/LanguageLogos/nodeLogo.png"
+    },
+    {
+        "id": 6,
+        "name": "html",
+        "path": "/LanguageLogos/htmlLogo.png"
+    },
+    {
+        "id": 7,
+        "name": "css",
+        "path": "/LanguageLogos/cssLogo.png"
+    },
+    {
+        "id": 8,
+        "name": "sql",
+        "path": "/LanguageLogos/sqlLogo.png"
+    },
+    {
+        "id": 9,
+        "name": "aws",
+        "path": "/LanguageLogos/awsLogo.png"
+    },
+    {
+        "id": 10,
+        "name": "postgres",
+        "path": "/LanguageLogos/postgresLogo.png"
+    }
+  ]
+}
