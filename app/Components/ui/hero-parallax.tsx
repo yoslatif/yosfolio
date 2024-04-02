@@ -108,7 +108,7 @@ export const Header = () => {
         YOSEPH <br /> LATIF
       </h1>
       <p className="max-w-2xl text-base md:text-xl mt-8 dark:text-neutral-200">
-      I'm a full-stack developer with a passion for blending the worlds of coding and art. 
+      I am a full-stack developer with a passion for blending the worlds of coding and art. 
       I bring a creative approach to my projects, aiming to make the web a more engaging and beautiful place.
       My interest in coding was sparked after I noticed many parallels to chess, a game I have a lifelong passion for. I am at my best when I get the opportunity to think deeply about complex puzzles and turn creative ideas into reality. I have a diverse background, from studying Psychology and Neuroscience at UC San Diego, 
       to working as a Technical Recruiter and a Chess Mentor, and I often draw from my diverse experiences to provide unique insights towards into I work on.
