@@ -1,25 +1,61 @@
+// import { motion } from 'framer-motion';
+// import Image from 'next/image';
+// import React from 'react';
+
+// // Define an interface for the component props
+// interface AnimatedProjectProps {
+//   src: string; // Define the type of src as string
+//   alt: string; // Define the type of alt as string
+// }
+
+// const AnimatedProject: React.FC<AnimatedProjectProps> = ({ src, alt }) => {
+//   const animation = {
+//     initial: { scale: 0.9 },
+//     animate: { scale: 1 },
+//     transition: { duration: 0.9, ease: "easeOut" }
+//   };
+
+//   return (
+//     <motion.div {...animation}>
+//       <Image src="/ParmazonImg.png" alt="Background" width={400} height={200} layout='responsive' />
+//       <Image src="/ParmazonImg.png" alt="Background" width={400} height={200} layout='responsive' />
+
+//     </motion.div>
+//   );
+// };
+
+// export default AnimatedProject;
+
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import React from 'react';
 
-// Define an interface for the component props
 interface AnimatedProjectProps {
-  src: string; // Define the type of src as string
-  alt: string; // Define the type of alt as string
+  src: string;
+  alt: string;
+  title: string;
+  description: string;
+  link: string;
 }
 
-const AnimatedProject: React.FC<AnimatedProjectProps> = ({ src, alt }) => {
+const AnimatedProject: React.FC<AnimatedProjectProps> = ({ src, alt, title, description, link }) => {
   const animation = {
-    initial: { scale: 0.9 },
+    initial: { scale: 0.95 },
     animate: { scale: 1 },
-    transition: { duration: 0.9, ease: "easeOut" }
+    transition: { duration: 0.5, ease: "easeOut" }
   };
 
   return (
-    <motion.div {...animation}>
-      <Image src="/ParmazonImg.png" alt="Background" width={400} height={200} layout='responsive' />
-      <Image src="/ParmazonImg.png" alt="Background" width={400} height={200} layout='responsive' />
-
+    <motion.div className="relative group" {...animation}>
+      {/* <Image src="/ParmazonImg.png" alt="Background" width={500} height={300} layout='responsive' /> */}
+      <Image src={src} alt={alt} width={500} height={300} layout='responsive' />
+      <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 flex justify-center items-center transition-opacity duration-300">
+        <div className="text-white p-4 text-center">
+          <h3 className="text-xl font-bold">{title}</h3>
+          <p className="my-2">{description}</p>
+          <a href={link} className="text-blue-300 underline">Learn More</a>
+        </div>
+      </div>
     </motion.div>
   );
 };

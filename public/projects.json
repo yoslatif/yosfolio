@@ -1,0 +1,18 @@
+[
+    {
+      "id": 1,
+      "title": "Project Name",
+      "description": "Brief description of the project.",
+      "technologies": ["Technology 1", "Technology 2"],
+      "image": "/path_to_project_image.jpg",
+      "link": "http://project-link.com"
+    },
+    {
+        "id": 2,
+        "title": "Project Name",
+        "description": "Brief description of the project.",
+        "technologies": ["Technology 1", "Technology 2"],
+        "image": "/path_to_project_image.jpg",
+        "link": "http://project-link.com"
+    }
+  ]
