@@ -7,6 +7,7 @@
   --background-start-rgb: 104, 139, 120;
   --background-end-rgb: 232, 223, 223;
   --classic-texture: url('/newimptest.jpeg');
+  --classic-texture2: url('/impimg2.webp');
   --earth-tone-1: #e226ff; /* Warm Earth Tone */
   --earth-tone-2: #126921; /* Light Earth Tone */
   --modern-accent-1: #2D2D2D; /* Dark Accent for Modern Contrast */
@@ -57,6 +58,7 @@ h1, h2, h3, h4, h5, h6 {
   .text-balance {
     text-wrap: balance;
   }
+
 }
 
 

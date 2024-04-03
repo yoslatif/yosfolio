@@ -36,9 +36,9 @@ export default function RootLayout({
       <head />
       <body>
         <Header />
-        {children}
         <AboutSection />
         <ProjectsSection />
+        {children}
       </body>
     </html>
   );

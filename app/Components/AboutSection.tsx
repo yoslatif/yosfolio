@@ -8,7 +8,7 @@ import { langlogos } from '../../langlogos.json';
 const AboutSection = () => {
   return (
     <section className="p-8">
-      <div className="max-w-4xl mx-auto">
+      {/* <div className="max-w-4xl mx-auto">
         <h2 className="text-3xl font-bold mb-4">About Me</h2>
         <p className="mb-4">
         I am a full-stack developer with a passion for blending the worlds of coding and art. I bring a creative approach to my projects, aiming to make the web a more engaging and beautiful place.
@@ -25,7 +25,7 @@ const AboutSection = () => {
           <Link href="https://github.com/yoslatif" className="text-blue-500"> GitHub </Link> | 
           <Link href="mailto:yoslatif@gmail.com" className="text-blue-500"> Email Me </Link>
         </div>
-      </div>
+      </div> */}
       <HeroParallax products={langlogos} />
     </section>
   );

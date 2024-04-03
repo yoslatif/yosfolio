@@ -10,6 +10,7 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 
+
 export const HeroParallax = ({
   products,
 }: {
@@ -28,7 +29,40 @@ export const HeroParallax = ({
     offset: ["start start", "end start"],
   });
 
-  const springConfig = { stiffness: 300, damping: 30, bounce: 100 };
+  const [mouseX, setMouseX] = React.useState(0);
+  const [translateSpeed, setTranslateSpeed] = React.useState(0);
+
+    React.useEffect(() => {
+      const handleMouseMove = (event: MouseEvent) => {
+        setMouseX(event.clientX);
+      };
+    
+      window.addEventListener('mousemove', handleMouseMove);
+    
+      return () => {
+        window.removeEventListener('mousemove', handleMouseMove);
+      };
+    }, []);
+
+    React.useEffect(() => {
+      const windowWidth = window.innerWidth;
+      const edgeZone = 70; // Pixels from the edge of the window to be considered as an edge zone
+    
+      if (mouseX < edgeZone) {
+        // Mouse is near the left edge
+        setTranslateSpeed(-5); // Adjust speed as necessary
+      } else if (mouseX > windowWidth - edgeZone) {
+        // Mouse is near the right edge
+        setTranslateSpeed(1); // Adjust speed as necessary
+      } else {
+        setTranslateSpeed(0); // No need to move the logos when the mouse is not near the edges
+      }
+    }, [mouseX]); // This effect runs whenever mouseX changes
+    
+
+  
+
+  const springConfig = { stiffness: 700, damping: 70, bounce: 700 };
 
   const translateX = useSpring(
     useTransform(scrollYProgress, [0, 1], [0, 1000]),
@@ -51,9 +85,10 @@ export const HeroParallax = ({
     springConfig
   );
   const translateY = useSpring(
-    useTransform(scrollYProgress, [0, 0.2], [-700, 500]),
+    useTransform(scrollYProgress, [0, 0.3], [-1500, 10]), // Adjusted range
     springConfig
   );
+
   return (
     <div
       ref={ref}
@@ -101,27 +136,110 @@ export const HeroParallax = ({
   );
 };
 
+// export const Header = () => {
+//   return (
+//     <div className="max-w-7xl relative mx-auto py-20 md:py-40 px-4 w-full  left-0 top-0">
+//       <h1 className="text-2xl md:text-7xl font-bold dark:text-white">
+//         YOSEPH <br /> LATIF
+//       </h1>
+      // <p className="max-w-2xl text-base md:text-xl mt-8 dark:text-neutral-200">
+      //   I am a full-stack developer with a passion for blending the worlds of
+      //   coding and art. I bring a creative approach to my projects, aiming to
+      //   make the web a more engaging and beautiful place. My interest in coding
+      //   was sparked after I noticed many parallels to chess, a game I have a
+      //   lifelong passion for. I am at my best when I get the opportunity to
+      //   think deeply about complex puzzles and turn creative ideas into reality.
+      //   I have a diverse background, from studying Psychology and Neuroscience
+      //   at UC San Diego, to working as a Technical Recruiter and a Chess Mentor,
+      //   and I often draw from my diverse experiences to provide unique insights
+      //   towards into I work on. I have honed my skills in various programming
+      //   languages and frameworks, and successfully built multiple full-stack
+      //   applications, including an original concept for a website I had since
+      //   childhood. I have embraced every challenge software engineering has
+      //   presented and I look forward to countless more.
+      // </p>
+//       <div>
+//         <Link
+//           href="https://www.linkedin.com/in/yoseph-latif/"
+//           className="text-blue-500">
+//           {" "}
+//           LinkedIn{" "}
+//         </Link>{" "}
+//         |
+//         <Link href="https://github.com/yoslatif" className="text-blue-500">
+//           {" "}
+//           GitHub{" "}
+//         </Link>{" "}
+//         |
+//         <Link href="mailto:yoslatif@gmail.com" className="text-blue-500">
+//           {" "}
+//           Email Me{" "}
+//         </Link>
+//         <Image
+//   src="/yosimg.jpeg"
+//   alt="Profile Picture"
+//   width={488}  // Adjust the size as needed
+//   height={488} // Adjust the size as needed
+//   className="rounded-full mx-auto hover:brightness-110 transition-all duration-300"
+// />
+//       </div>
+//     </div>
+//   );
+// };
+
 export const Header = () => {
   return (
-    <div className="max-w-7xl relative mx-auto py-20 md:py-40 px-4 w-full  left-0 top-0">
-      <h1 className="text-2xl md:text-7xl font-bold dark:text-white">
-        YOSEPH <br /> LATIF
-      </h1>
-      <p className="max-w-2xl text-base md:text-xl mt-8 dark:text-neutral-200">
-      I am a full-stack developer with a passion for blending the worlds of coding and art. 
-      I bring a creative approach to my projects, aiming to make the web a more engaging and beautiful place.
-      My interest in coding was sparked after I noticed many parallels to chess, a game I have a lifelong passion for. I am at my best when I get the opportunity to think deeply about complex puzzles and turn creative ideas into reality. I have a diverse background, from studying Psychology and Neuroscience at UC San Diego, 
-      to working as a Technical Recruiter and a Chess Mentor, and I often draw from my diverse experiences to provide unique insights towards into I work on.
-      I have honed my skills in various programming languages and frameworks, and successfully built multiple full-stack applications, including an original concept for a website I had since childhood. 
-      I have embraced every challenge software engineering has presented and I look forward to countless more.
+    <div className="max-w-7xl mx-auto py-20 md:py-40 px-4 flex flex-col md:flex-row justify-between items-center w-full">
+      <div className="flex-1">
+        <h1 className="text-2xl md:text-7xl font-bold dark:text-white">
+          YOSEPH <br /> LATIF
+        </h1>
+        <p className="max-w-2xl text-base md:text-xl mt-8 dark:text-neutral-200">
+        I am a full-stack developer with a passion for blending the worlds of
+        coding and art. I bring a creative approach to my projects, aiming to
+        make the web a more engaging and beautiful place. My interest in coding
+        was sparked after I noticed many parallels to chess, a game I have a
+        lifelong passion for. I am at my best when I get the opportunity to
+        think deeply about complex puzzles and turn creative ideas into reality.
+        I have a diverse background, from studying Psychology and Neuroscience
+        at UC San Diego, to working as a Technical Recruiter and a Chess Mentor,
+        and I often draw from my diverse experiences to provide unique insights
+        towards into I work on. I have honed my skills in various programming
+        languages and frameworks, and successfully built multiple full-stack
+        applications, including an original concept for a website I had since
+        childhood. I have embraced every challenge software engineering has
+        presented and I look forward to countless more.
       </p>
-      <div>
-          <Link href="https://www.linkedin.com/in/yoseph-latif/" className="text-blue-500"> LinkedIn </Link> | 
-          <Link href="https://github.com/yoslatif" className="text-blue-500"> GitHub </Link> | 
-          <Link href="mailto:yoslatif@gmail.com" className="text-blue-500"> Email Me </Link>
+        {/* Your links */}
+        <div>
+        <Link
+          href="https://www.linkedin.com/in/yoseph-latif/"
+          className="text-blue-500">
+          {" "}
+          LinkedIn{" "}
+        </Link>{" "}
+        |
+        <Link href="https://github.com/yoslatif" className="text-blue-500">
+          {" "}
+          GitHub{" "}
+        </Link>{" "}
+        |
+        <Link href="mailto:yoslatif@gmail.com" className="text-blue-500">
+          {" "}
+          Email Me{" "}
+        </Link>
         </div>
+      </div>
+      <div className="flex-1 flex justify-center md:justify-end">
+        <Image
+          src="/yosimg.jpeg"
+          alt="Profile Picture"
+          width={488}
+          height={488}
+          className="rounded-full hover:brightness-110 transition-all duration-300"
+        />
+      </div>
     </div>
-    
   );
 };
 
@@ -142,22 +260,22 @@ export const ProductCard = ({
         x: translate,
       }}
       whileHover={{
-        y: -20,
+        y: -30,
       }}
       key={product.id}
-      className="group/product h-96 w-[30rem] relative flex-shrink-0"
+      className="group/product h-96 w-[24rem] relative flex-shrink-0"
     >
-        <Image
-          src={product.path}
-          height="600"
-          width="600"
-          className="object-cover object-left-top absolute h-full w-full inset-0"
-          alt={product.name}
-        />
+      <Image
+        src={product.path}
+        height="200" // Adjusted size
+        width="200" // Adjusted size
+        className="object-cover object-center absolute h-10% w-10% inset-0"
+        alt={product.name}
+      />
 
-      <div className="absolute inset-0 h-full w-full opacity-0 group-hover/product:opacity-80 bg-black pointer-events-none"></div>
+      <div className="absolute inset-0 h-full w-full opacity-0 group-hover/ pointer-events-none"></div>
       <h2 className="absolute bottom-4 left-4 opacity-0 group-hover/product:opacity-100 text-white">
-        {product.name}
+        {/* {product.name} */}
       </h2>
     </motion.div>
   );

@@ -77,6 +77,8 @@ import AnimatedProject from './AnimatedProj';
 import Image from 'next/image';
 // import { HeroParallax } from './ui/hero-parallax';
 // import { langlogos } from '../../langlogos.json';
+import { CardContainer, CardBody, CardItem } from './ui/3d-card';
+
 
 // Assume we have the projects data loaded from a JSON as shown previously
 const ProjectSection = () => {
@@ -93,7 +95,7 @@ const ProjectSection = () => {
     {
       id: 2,
       title: "Philosophize",
-      description: "brief description of the project",
+      description: "A Philosophical debate platform built with a PostgreSQL Flask backend and a React frontend. Users can create and join debates on a variety of topics, and engage in thoughtful discussions with other users. There is only one topic per day to keep a focused topic and prevent doom-scrolling.",
       technologies: ["React", "Flask", "SQL"],
       image: "/PhilosophizeImg.png",
       link: "https://philosophize.onrender.com/"
@@ -111,21 +113,33 @@ const ProjectSection = () => {
   // ]
 
   return (
-    <section className="grid grid-cols-1 md:grid-cols-2 gap-4">
-      {projects.map((project) => (
-        <div key={project.id} className="project-frame">
-          <AnimatedProject 
-            src={project.image} 
-            alt={project.title} 
-            title={project.title} 
-            description={project.description} 
-            link={project.link} 
-          />
-        </div>
-      ))}
+    <section className="py-12">
+      <CardContainer containerClassName="flex flex-wrap justify-center gap-19">
+        {projects.map((project) => (
+          <CardBody key={project.id} className="w-full md:w-1/2 lg:w-1/3 p-4">
+            <CardItem className="bg-white shadow-lg rounded-lg overflow-hidden p-5">
+              <div className="mb-8">
+                <Image 
+                  src={project.image} 
+                  alt={project.title} 
+                  width={400}  // Adjust the size as needed
+                  height={225} // Adjust the size based on aspect ratio
+                  className="object-cover"
+                />
+              </div>
+              <h3 className="text-lg font-bold">{project.title}</h3>
+              <p className="text-sm text-gray-600">{project.description}</p>
+              <a href={project.link} className="text-blue-500 mt-2 inline-block">
+                Visit Project
+              </a>
+            </CardItem>
+          </CardBody>
+        ))}
+      </CardContainer>
     </section>
   );
 };
+
 
 export default ProjectSection;
 
