@@ -99,6 +99,14 @@ const ProjectSection = () => {
       technologies: ["React", "Flask", "SQL"],
       image: "/PhilosophizeImg.png",
       link: "https://philosophize.onrender.com/"
+    },
+    {
+      id: 3,
+      title: "YosBnb",
+      description: "AirBnb clone built using Node JS, React, and SQL. Sleek design that follows AirBnb's vision very closely.",
+      technologies: ["NodeJS", "React"],
+      image: "/yosbnbimg.png",
+      link: "https://yosauthme.onrender.com/"
     }
     // Add more projects as needed
   ];

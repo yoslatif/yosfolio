@@ -86,3 +86,28 @@ h1, h2, h3, h4, h5, h6 {
     opacity: 0;
   }
 }
+
+
+.image-container {
+  display: inline-block; /* Makes the hover effect apply to the area of the image only */
+  border-radius: 100%; /* Keeps the rounded look */
+  
+}
+
+.image-container:hover .glow-on-hover {
+  animation: rotateImage 3s linear infinite;
+  box-shadow: 0 0 8px #1d471a, 0 0 12px #FFF, 0 0 16px #39b3e3, 0 0 20px #B6FF00, 0 0 24px #227288, 0 0 28px #255d9a;
+}
+
+@keyframes rotateImage {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.glow-on-hover {
+  transition: box-shadow 0.5s ease-in-out;
+}
