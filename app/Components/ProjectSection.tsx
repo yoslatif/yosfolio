@@ -122,16 +122,16 @@ const ProjectSection = () => {
 
   return (
     <section className="py-12">
-      <CardContainer containerClassName="flex flex-wrap justify-center gap-19">
+      <CardContainer containerClassName="flex flex-wrap justify-center gap-10">
         {projects.map((project) => (
-          <CardBody key={project.id} className="w-full md:w-1/2 lg:w-1/3 p-4">
+          <CardBody key={project.id} className="w-1/2 md:w-1/2 lg:w-1/3 p-4">
             <CardItem className="bg-white shadow-lg rounded-lg overflow-hidden p-5">
               <div className="mb-8">
                 <Image 
                   src={project.image} 
                   alt={project.title} 
-                  width={400}  // Adjust the size as needed
-                  height={225} // Adjust the size based on aspect ratio
+                  width={700}  // Adjust the size as needed
+                  height={525} // Adjust the size based on aspect ratio
                   className="object-cover"
                 />
               </div>

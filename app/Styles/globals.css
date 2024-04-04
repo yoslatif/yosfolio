@@ -109,6 +109,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .glow-on-hover:hover {
-  box-shadow: 0 0 8px #FFF, 0 0 12px #1d471a, 0 0 16px #39b3e3;
-  transition: box-shadow 0.5s ease-in-out;
+  box-shadow: 0 0 8px #FFF, 0 0 12px #ffffff, 0 0 16px #91a8d3;
+  transition: box-shadow 1s ease-in-out;
+  padding: 0px;
+  border-radius: 50% 
 }
