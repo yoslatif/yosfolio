@@ -211,7 +211,7 @@ export const Header = () => {
         presented and I look forward to countless more.
       </p>
         {/* Your links */}
-        <div>
+        {/* <div>
         <Link
           href="https://www.linkedin.com/in/yoseph-latif/"
           className="text-blue-500">
@@ -228,7 +228,7 @@ export const Header = () => {
           {" "}
           Email Me{" "}
         </Link>
-        </div>
+        </div> */}
       </div>
       <div className="flex-1 flex justify-center md:justify-end">
         <Image
