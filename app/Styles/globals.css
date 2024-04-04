@@ -96,7 +96,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .image-container:hover .glow-on-hover {
   animation: rotateImage 3s linear infinite;
-  box-shadow: 0 0 8px #1d471a, 0 0 12px #FFF, 0 0 16px #39b3e3, 0 0 20px #B6FF00, 0 0 24px #227288, 0 0 28px #255d9a;
+  box-shadow: 0 0 8px #1d471a, 0 0 12px #FFF, 0 0 16px #39b3e3, 0 0 20px #2e8c99, 0 0 24px #227288, 0 0 28px #255d9a;
 }
 
 @keyframes rotateImage {
@@ -108,6 +108,7 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-.glow-on-hover {
+.glow-on-hover:hover {
+  box-shadow: 0 0 8px #FFF, 0 0 12px #1d471a, 0 0 16px #39b3e3;
   transition: box-shadow 0.5s ease-in-out;
 }
