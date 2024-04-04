@@ -1,9 +1,15 @@
 "use client";
-import React from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import ResumeModal from './ResumeModal';
 
 const Header = () => {
+
+  const [isResumeModalOpen, setIsResumeModalOpen] = useState(false);
+
+  const openResumeModal = () => setIsResumeModalOpen(true);
+  const closeResumeModal = () => setIsResumeModalOpen(false);
   
   const playMusic = () => {
     const audio = document.getElementById('backgroundMusic') as HTMLAudioElement | null;
@@ -56,10 +62,11 @@ const Header = () => {
           
           {/* Call-to-Action Button */}
           <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
-            <Link href="/resume.pdf" className="whitespace-nowrap text-base font-medium text-gray-500 hover:text-gray-900">Resume</Link>
+            <button onClick={openResumeModal} className="whitespace-nowrap text-base font-medium text-gray-500 hover:text-gray-900">Resume</button>
           </div>
         </div>
       </div>
+      <ResumeModal isOpen={isResumeModalOpen} onClose={closeResumeModal} />
     </header>
   );
 };
