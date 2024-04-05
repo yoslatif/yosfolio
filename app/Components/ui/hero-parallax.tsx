@@ -62,7 +62,7 @@ export const HeroParallax = ({
 
   
 
-  const springConfig = { stiffness: 700, damping: 70, bounce: 700 };
+  const springConfig = { stiffness: 10, damping: 10, bounce: 100 };
 
   const translateX = useSpring(
     useTransform(scrollYProgress, [0, 1], [0, 1000]),
