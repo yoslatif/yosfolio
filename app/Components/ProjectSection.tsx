@@ -103,7 +103,7 @@ const ProjectSection = () => {
     {
       id: 3,
       title: "YosBnb",
-      description: "AirBnb clone built using Node JS, React, and SQL. Sleek design that follows AirBnb's vision very closely.",
+      description: "AirBnb clone built using Node JS, React, and SQL. Project includes a strong demonstration of authentication features, booking, and review features, and a sleek design which imitates AirBnb's UI (one of my personal favorites) as close as possible.",
       technologies: ["NodeJS", "React"],
       image: "/yosbnbimg.png",
       link: "https://yosauthme.onrender.com/"

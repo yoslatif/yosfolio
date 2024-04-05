@@ -48,8 +48,10 @@ const Header = () => {
                   height={70}
                   className="rounded-full"
                 />
+
               </div>
             </Link>
+            
           </div>
 
           <audio id="backgroundMusic" loop>
@@ -60,19 +62,19 @@ const Header = () => {
           {/* Navigation Links */}
           <nav className="hidden md:flex space-x-10">
             {/* <Link href="/about" className="text-base font-medium text-gray-500 hover:text-gray-900">About</Link> */}
-            <Link
+            {/* <Link
               href="/"
               className="text-base font-medium text-gray-500 hover:text-gray-900"
             >
               Projects
-            </Link>
+            </Link> */}
             {/* <Link href="/contact" className="text-base font-medium text-gray-500 hover:text-gray-900">Contact</Link> */}
 
             <div className="flex-grow">
         <div className="flex justify-center space-x-10">
               <Link
                 href="https://www.linkedin.com/in/yoseph-latif/"
-                className="text-blue-500 glow-on-hover"
+                className="text-blue-500 glow-on-hover rounded-full cursor-pointer"
               >
                 {" "}
                 <Image
@@ -112,6 +114,13 @@ const Header = () => {
 
           {/* Call-to-Action Button */}
           <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
+          <Link
+              href="/"
+              className="text-base font-medium text-gray-500 hover:text-gray-900"
+            >
+              Projects
+            </Link>
+            <div className="text-gray=500"> | | | </div>
             <button
               onClick={openResumeModal}
               className="whitespace-nowrap text-base font-medium text-gray-500 hover:text-gray-900"
