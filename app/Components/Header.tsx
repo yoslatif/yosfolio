@@ -74,14 +74,14 @@ const Header = () => {
         <div className="flex justify-center space-x-10">
               <Link
                 href="https://www.linkedin.com/in/yoseph-latif/"
-                className="text-blue-500 glow-on-hover rounded-full cursor-pointer"
+                className="text-blue-500 glow-on-hover"
               >
                 {" "}
                 <Image
                   src="/linkedinLogo.png"
                   alt="linkedinLogo"
-                  width={50}
-                  height={50}
+                  width={40}
+                  height={40}
                   className="rounded-full"
                 />{" "}
               </Link>{" "}
@@ -93,8 +93,8 @@ const Header = () => {
                 <Image
                   src="/githubLogo.png"
                   alt="gitHubLogo"
-                  width={50}
-                  height={50}
+                  width={40}
+                  height={40}
                   className="rounded-full"
                 />{" "}
               </Link>{" "}
@@ -103,8 +103,8 @@ const Header = () => {
                 <Image
                   src="/emailLogo.png"
                   alt="emailLogo"
-                  width={50}
-                  height={50}
+                  width={40}
+                  height={40}
                   className="rounded-full"
                 />{" "}
               </Link>

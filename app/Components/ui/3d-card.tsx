@@ -30,8 +30,8 @@ export const CardContainer = ({
     if (!containerRef.current) return;
     const { left, top, width, height } =
       containerRef.current.getBoundingClientRect();
-    const x = -(e.clientX - left - width / 2) / 15; // Invert the sign and adjust sensitivity
-    const y = -(e.clientY - top - height / 2) / 15; // Invert the sign and adjust sensitivity
+    const x = -(e.clientX - left - width / 2) / 35; // Invert the sign and adjust sensitivity
+    const y = -(e.clientY - top - height / 2) / 35; // Invert the sign and adjust sensitivity
     containerRef.current.style.transform = `rotateY(${x}deg) rotateX(${y}deg)`;
   };
   
@@ -50,11 +50,11 @@ export const CardContainer = ({
     <MouseEnterContext.Provider value={[isMouseEntered, setIsMouseEntered]}>
       <div
         className={cn(
-          "py-20 flex items-center justify-center",
+          "py-20 items-center justify-center",
           containerClassName
         )}
         style={{
-          perspective: "3000px",
+          perspective: "5000px",
         }}
       >
         <div
@@ -63,7 +63,7 @@ export const CardContainer = ({
           onMouseMove={handleMouseMove}
           onMouseLeave={handleMouseLeave}
           className={cn(
-            "flex items-center justify-center relative transition-all duration-200 ease-linear",
+            "grid grid-cols-2 gap-2 justify-center relative transition-all duration-200 ease-linear",
             className
           )}
           style={{
@@ -138,7 +138,7 @@ export const CardItem = ({
   return (
     <Tag
       ref={ref}
-      className={cn("w-fit transition duration-200 ease-linear", className)}
+      className={cn("w-fit transition duration-100 ease-linear", className)}
       {...rest}
     >
       {children}

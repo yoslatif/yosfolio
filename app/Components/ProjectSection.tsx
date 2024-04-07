@@ -1,76 +1,3 @@
-// // ProjectsSection.tsx
-// import { motion } from 'framer-motion';
-
-// const projects = [
-//   {
-//     title: 'Project One',
-//     description: 'A cool project I made',
-//     imageUrl: '/projects/project-one.png',
-//     liveUrl: '#',
-//     codeUrl: '#'
-//   },
-//   // ...other projects
-// ];
-
-// const ProjectsSection = () => {
-//   return (
-//     <section className="p-20">
-//       <motion.div
-//         initial="hidden"
-//         whileInView="visible"
-//         viewport={{ once: true }}
-//         transition={{ duration: 0.8 }}
-//         variants={{
-//           visible: { opacity: 1, translateY: 0 },
-//           hidden: { opacity: 0, translateY: 100 }
-//         }}
-//       >
-//         <h2 className="text-4xl font-playfair mb-8">Projects</h2>
-//         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-//           {projects.map((project) => (
-//             <div key={project.title} className="border p-4 rounded-lg">
-//               {/* ...content here */}
-//             </div>
-//           ))}
-//         </div>
-//       </motion.div>
-//     </section>
-//   );
-// };
-
-// export default ProjectsSection;
-
-
-
-
-
-
-// "use client";
-// import React from 'react';
-// import AnimatedProject from './AnimatedProj';
-
-// const ProjectSection = () => {
-//   // Your projects data might come from a list or however you have them stored
-//   const projects = [
-//     // Example project data
-//     { src: '/path_to_project_image.jpg', alt: 'Project 1' },
-//     // ...other projects
-//   ];
-
-//   return (
-//     <section>
-//       {/* Map through your projects and create an animated image for each */}
-//       {projects.map((project, index) => (
-//         <div key={index} className="project-frame">
-//           <AnimatedProject src="/projects/newimptest.jpeg" alt="Description of Image" />
-//         </div>
-//       ))}
-//     </section>
-//   );
-// };
-
-// export default ProjectSection;
-
 "use client";
 import React, { useEffect, useState } from 'react';
 import AnimatedProject from './AnimatedProj';
@@ -95,7 +22,7 @@ const ProjectSection = () => {
     {
       id: 2,
       title: "Philosophize",
-      description: "A Philosophical debate platform built with a PostgreSQL Flask backend and a React frontend. Users can create and join debates on a variety of topics, and engage in thoughtful discussions with other users. There is only one topic per day to keep a focused topic and prevent doom-scrolling.",
+      description: "A philosophical debate platform built with a PostgreSQL Flask backend and a React frontend. Users can create and join debates on a variety of topics, and engage in thoughtful discussions with other users. There is only one topic per day to keep a focused topic and prevent doom-scrolling.",
       technologies: ["React", "Flask", "SQL"],
       image: "/PhilosophizeImg.png",
       link: "https://philosophize.onrender.com/"
@@ -111,20 +38,11 @@ const ProjectSection = () => {
     // Add more projects as needed
   ];
 
-  // const langlogos = [
-  //   { name: "Python", image: "/PythonLogo.png" },
-  //   { name: "JavaScript", image: "/JavaScriptLogo.png" },
-  //   { name: "React", image: "/ReactLogo.png" },
-  //   { name: "Redux", image: "/ReduxLogo.png" },
-  //   { name: "Flask", image: "/FlaskLogo.png" },
-  //   { name: "PostgreSQL", image: "/PostgresLogo.png" }
-  // ]
-
   return (
-    <section className="py-12">
-      <CardContainer containerClassName="flex flex-wrap justify-center gap-10">
+    <section className="py-4">
+      <CardContainer containerClassName="flex flex-wrap justify-center gap-20">
         {projects.map((project) => (
-          <CardBody key={project.id} className="w-full md:w-1/2 lg:w-1/2 p-4">
+          <CardBody key={project.id} className="w-full p-4">
 
             <CardItem className="bg-white shadow-lg rounded-lg overflow-hidden p-5">
               <div className="mb-8">
@@ -151,6 +69,3 @@ const ProjectSection = () => {
 
 
 export default ProjectSection;
-
-
-// Type '{ src: string; alt: string; }' is missing the following properties from type 'AnimatedProjectProps': title, description, linkts(2739
