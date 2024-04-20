@@ -61,15 +61,6 @@ const Header = () => {
 
           {/* Navigation Links */}
           <nav className="hidden md:flex space-x-10">
-            {/* <Link href="/about" className="text-base font-medium text-gray-500 hover:text-gray-900">About</Link> */}
-            {/* <Link
-              href="/"
-              className="text-base font-medium text-gray-500 hover:text-gray-900"
-            >
-              Projects
-            </Link> */}
-            {/* <Link href="/contact" className="text-base font-medium text-gray-500 hover:text-gray-900">Contact</Link> */}
-
             <div className="flex-grow">
         <div className="flex justify-center space-x-10">
               <Link

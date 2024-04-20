@@ -136,56 +136,6 @@ export const HeroParallax = ({
   );
 };
 
-// export const Header = () => {
-//   return (
-//     <div className="max-w-7xl relative mx-auto py-20 md:py-40 px-4 w-full  left-0 top-0">
-//       <h1 className="text-2xl md:text-7xl font-bold dark:text-white">
-//         YOSEPH <br /> LATIF
-//       </h1>
-      // <p className="max-w-2xl text-base md:text-xl mt-8 dark:text-neutral-200">
-      //   I am a full-stack developer with a passion for blending the worlds of
-      //   coding and art. I bring a creative approach to my projects, aiming to
-      //   make the web a more engaging and beautiful place. My interest in coding
-      //   was sparked after I noticed many parallels to chess, a game I have a
-      //   lifelong passion for. I am at my best when I get the opportunity to
-      //   think deeply about complex puzzles and turn creative ideas into reality.
-      //   I have a diverse background, from studying Psychology and Neuroscience
-      //   at UC San Diego, to working as a Technical Recruiter and a Chess Mentor,
-      //   and I often draw from my diverse experiences to provide unique insights
-      //   towards into I work on. I have honed my skills in various programming
-      //   languages and frameworks, and successfully built multiple full-stack
-      //   applications, including an original concept for a website I had since
-      //   childhood. I have embraced every challenge software engineering has
-      //   presented and I look forward to countless more.
-      // </p>
-//       <div>
-//         <Link
-//           href="https://www.linkedin.com/in/yoseph-latif/"
-//           className="text-blue-500">
-//           {" "}
-//           LinkedIn{" "}
-//         </Link>{" "}
-//         |
-//         <Link href="https://github.com/yoslatif" className="text-blue-500">
-//           {" "}
-//           GitHub{" "}
-//         </Link>{" "}
-//         |
-//         <Link href="mailto:yoslatif@gmail.com" className="text-blue-500">
-//           {" "}
-//           Email Me{" "}
-//         </Link>
-//         <Image
-//   src="/yosimg.jpeg"
-//   alt="Profile Picture"
-//   width={488}  // Adjust the size as needed
-//   height={488} // Adjust the size as needed
-//   className="rounded-full mx-auto hover:brightness-110 transition-all duration-300"
-// />
-//       </div>
-//     </div>
-//   );
-// };
 
 export const Header = () => {
   return (
@@ -210,25 +160,6 @@ export const Header = () => {
         childhood. I have embraced every challenge software engineering has
         presented and I look forward to countless more.
       </p>
-        {/* Your links */}
-        {/* <div>
-        <Link
-          href="https://www.linkedin.com/in/yoseph-latif/"
-          className="text-blue-500">
-          {" "}
-          LinkedIn{" "}
-        </Link>{" "}
-        |
-        <Link href="https://github.com/yoslatif" className="text-blue-500">
-          {" "}
-          GitHub{" "}
-        </Link>{" "}
-        |
-        <Link href="mailto:yoslatif@gmail.com" className="text-blue-500">
-          {" "}
-          Email Me{" "}
-        </Link>
-        </div> */}
       </div>
       <div className="flex-1 flex justify-center md:justify-end">
         <Image
