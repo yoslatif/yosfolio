@@ -56,13 +56,24 @@ const ProjectSection = () => {
               </div>
               <h3 className="text-lg font-bold">{project.title}</h3>
               <p className="text-sm text-gray-600">{project.description}</p>
-              <a href={project.link} className="text-blue-500 mt-2 inline-block">
+              <a href={project.link} className="visit-project-btn text-blue-500 mt-2 inline-block">
                 Visit Project
               </a>
             </CardItem>
           </CardBody>
         ))}
       </CardContainer>
+      <style jsx>{`
+        .visit-project-btn:hover {
+          box-shadow: 0 0 8px 4px rgba(0, 120, 255, 0.5); 
+          transition: box-shadow 0.3s ease-in-out;
+          padding: 0.3rem;
+          border-radius: 0.9rem;
+          // background-color: rgba(0, 120, 255, 0.1);
+          background-color: pink;
+          color: magenta;
+        }
+      `}</style>
     </section>
   );
 };

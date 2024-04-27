@@ -30,8 +30,8 @@ export const CardContainer = ({
     if (!containerRef.current) return;
     const { left, top, width, height } =
       containerRef.current.getBoundingClientRect();
-    const x = -(e.clientX - left - width / 2) / 35; // Invert the sign and adjust sensitivity
-    const y = -(e.clientY - top - height / 2) / 35; // Invert the sign and adjust sensitivity
+    const x = -(e.clientX - left - width / 2) / 55; // Invert the sign and adjust sensitivity
+    const y = -(e.clientY - top - height / 2) / 55; // Invert the sign and adjust sensitivity
     containerRef.current.style.transform = `rotateY(${x}deg) rotateX(${y}deg)`;
   };
   
