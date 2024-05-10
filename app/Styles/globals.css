@@ -61,6 +61,26 @@ h1, h2, h3, h4, h5, h6 {
 
 }
 
+.text-container {
+  background: rgba(0, 0, 0, 0.5); /* Adjust opacity as desired */
+  border-radius: 10px; /* Optional: Adds some rounding to the edges */
+  padding: 20px; /* Adjust padding as per your design */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Adds a subtle shadow */
+  display: flex; /* Enable flexbox */
+  flex-direction: column; /* Arrange content vertically */
+  justify-content: center; /* Center content vertically */
+  align-items: center; /* Center content horizontally */
+}
+
+.centered-heading {
+  display: flex;
+  justify-content: center; /* Horizontally centers the heading */
+  text-align: center; /* Aligns multiple lines of the heading to the center */
+  width: 100%; /* Adjust to ensure full-width centering */
+}
+
+
+
 
 .project-frame {
   padding: 10px;
