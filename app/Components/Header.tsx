@@ -89,6 +89,19 @@ const Header = () => {
                   className="rounded-full"
                 />{" "}
               </Link>{" "}
+              <Link
+                href="https://www.instagram.com/yosdefinitely/"
+                className="text-blue-500 glow-on-hover"
+              >
+                {" "}
+                <Image
+                  src="/igPNG.png"
+                  alt="instaLogo"
+                  width={43}
+                  height={43}
+                  className="rounded-full"
+                />{" "}
+              </Link>{" "}
               <Link href="mailto:yoslatif@gmail.com" className="text-blue-500 glow-on-hover">
                 {" "}
                 <Image
