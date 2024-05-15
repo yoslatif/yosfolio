@@ -37,9 +37,19 @@ const ProjectSection = () => {
       image: "/yosbnbimg.png",
       link: "https://yosauthme.onrender.com/",
       gitlink: "https://github.com/yoslatif/AirBnb"
-    }
-    // Add more projects as needed
+    },
+    {
+      id: 4,
+      title: "Green Gains Fitness",
+      description: "A fitness app that allows users to track their workouts and nutrition. Users can create custom workouts, track their progress, and view their workout history. The app also includes a nutrition tracker that allows users to log their meals and track their macronutrient intake.",
+      technologies: ["NextJS", "React", "TailwindCSS"],
+      image: "/greengainsscreen.png",
+      link: "https://green-gains.vercel.app/",
+      gitlink: "https://github.com/yoslatif/greenGains"
+    },
+    // Add more projects
   ];
+
 
   return (
     <section className="py-4">
