@@ -95,7 +95,7 @@ const Header = () => {
               >
                 {" "}
                 <Image
-                  src="/igPNG.png"
+                  src="/IGpng.png"
                   alt="instaLogo"
                   width={43}
                   height={43}
