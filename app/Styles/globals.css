@@ -2,12 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 104, 139, 120;
   --background-end-rgb: 232, 223, 223;
-  --classic-texture: url('/newimptest.jpeg');
-  --classic-texture2: url('/impimg2.webp');
+  --classic-texture: url('/smoothbg.jpg');
   --earth-tone-1: #e226ff; /* Warm Earth Tone */
   --earth-tone-2: #126921; /* Light Earth Tone */
   --modern-accent-1: #2D2D2D; /* Dark Accent for Modern Contrast */
@@ -135,3 +137,59 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 50% 
 }
 
+
+
+/* Example CSS for project animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.project-appear {
+  animation: fadeInUp 0.5s ease-out forwards;
+}
+
+/* Ensure the project cards take up the full width */
+.project-card {
+  width: 100%;
+  max-width: 1200px; /* Optionally limit the max width */
+  margin: 0 auto; /* Center the card */
+}
+
+
+body {
+  font-family: 'Great Vibes'; /* Add this font to your project */
+}
+
+.font-cursive {
+  font-family: 'Great Vibes';
+}
+
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.inset-0 {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.z-0 {
+  z-index: 0;
+}
+
+.z-10 {
+  z-index: 10;
+}

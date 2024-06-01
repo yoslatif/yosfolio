@@ -5,26 +5,8 @@ import ProjectsSection from './Components/ProjectSection';
 import AboutSection from "./Components/AboutSection";
 
 import './Styles/globals.css';
+import Footer from './Components/Footer';
 
-// export default function RootLayout({ children }: Readonly<{ children: React.ReactNode; }>) {
-
-//   return (
-//     <html>
-//       <Header/>
-//       <head/>      
-//     <div className="root-layout"> {/* Use a div instead of <html> and <body> */}
-//       <div>
-//       <body>
-//       {children}
-//       <AboutSection/>
-//       <ProjectsSection/>
-//       </body>
-//       </div>
-    
-//     </div>
-//     </html>
-//   );
-// }
 
 export default function RootLayout({
   children,
@@ -40,6 +22,7 @@ export default function RootLayout({
         {children}
         <ProjectsSection />
         {children}
+        <Footer />
       </body>
     </html>
   );

@@ -1,15 +1,15 @@
 "use client";
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import {
   motion,
   useScroll,
   useTransform,
   useSpring,
-  MotionValue,
+  useAnimation,
+  useInView
 } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-
 
 export const HeroParallax = ({
   products,
@@ -23,46 +23,43 @@ export const HeroParallax = ({
   const firstRow = products.slice(0, 5);
   const secondRow = products.slice(5, 10);
   const thirdRow = products.slice(10, 15);
-  const ref = React.useRef(null);
+  const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start start", "end start"],
   });
 
-  const [mouseX, setMouseX] = React.useState(0);
-  const [translateSpeed, setTranslateSpeed] = React.useState(0);
+  const [mouseX, setMouseX] = useState(0);
+  const [translateSpeed, setTranslateSpeed] = useState(0);
 
-    React.useEffect(() => {
-      const handleMouseMove = (event: MouseEvent) => {
-        setMouseX(event.clientX);
-      };
-    
-      window.addEventListener('mousemove', handleMouseMove);
-    
-      return () => {
-        window.removeEventListener('mousemove', handleMouseMove);
-      };
-    }, []);
+  useEffect(() => {
+    const handleMouseMove = (event: MouseEvent) => {
+      setMouseX(event.clientX);
+    };
 
-    React.useEffect(() => {
-      const windowWidth = window.innerWidth;
-      const edgeZone = 70; // Pixels from the edge of the window to be considered as an edge zone
-    
-      if (mouseX < edgeZone) {
-        // Mouse is near the left edge
-        setTranslateSpeed(-5); // Adjust speed as necessary
-      } else if (mouseX > windowWidth - edgeZone) {
-        // Mouse is near the right edge
-        setTranslateSpeed(1); // Adjust speed as necessary
-      } else {
-        setTranslateSpeed(0); // No need to move the logos when the mouse is not near the edges
-      }
-    }, [mouseX]); // This effect runs whenever mouseX changes
-    
+    window.addEventListener("mousemove", handleMouseMove);
 
-  
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+    };
+  }, []);
 
-  const springConfig = { stiffness: 10, damping: 10, bounce: 100 };
+  useEffect(() => {
+    const windowWidth = window.innerWidth;
+    const edgeZone = 70; // Pixels from the edge of the window to be considered as an edge zone
+
+    if (mouseX < edgeZone) {
+      // Mouse is near the left edge
+      setTranslateSpeed(-5); // Adjust speed as necessary
+    } else if (mouseX > windowWidth - edgeZone) {
+      // Mouse is near the right edge
+      setTranslateSpeed(1); // Adjust speed as necessary
+    } else {
+      setTranslateSpeed(0); // No need to move the logos when the mouse is not near the edges
+    }
+  }, [mouseX]); // This effect runs whenever mouseX changes
+
+  const springConfig = { stiffness: 300, damping: 30, bounce: 100 };
 
   const translateX = useSpring(
     useTransform(scrollYProgress, [0, 1], [0, 1000]),
@@ -92,7 +89,8 @@ export const HeroParallax = ({
   return (
     <div
       ref={ref}
-      className="h-[300vh] py-40 overflow-hidden  antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]"
+      className="h-[165vh] py-50 antialiased relative flex flex-col self-auto [perspective:800px] [transform-style:preserve-3d]"
+      style={{ zIndex: -10 }} // Ensure the parallax container is behind everything
     >
       <Header />
       <motion.div
@@ -106,29 +104,80 @@ export const HeroParallax = ({
       >
         <motion.div className="flex flex-row-reverse space-x-reverse space-x-20 mb-20">
           {firstRow.map((product) => (
-            <ProductCard
-              product={product}
-              translate={translateX}
+            <motion.div
+              style={{
+                x: translateX,
+              }}
+              whileHover={{
+                y: -30,
+              }}
               key={product.id}
-            />
+              className="group/product h-96 w-[24rem] relative flex-shrink-0"
+            >
+              <Image
+                src={product.path}
+                height="200" // Adjusted size
+                width="200" // Adjusted size
+                className="object-cover object-center absolute h-10% w-10% inset-0"
+                alt={product.name}
+              />
+              <div className="absolute inset-0 h-full w-full opacity-0 group-hover:pointer-events-none"></div>
+              <h2 className="absolute bottom-4 left-4 opacity-0 group-hover/product:opacity-100 text-white">
+                {product.name}
+              </h2>
+            </motion.div>
           ))}
         </motion.div>
-        <motion.div className="flex flex-row  mb-20 space-x-20 ">
+        <motion.div className="flex flex-row mb-20 space-x-20 ">
           {secondRow.map((product) => (
-            <ProductCard
-              product={product}
-              translate={translateXReverse}
-              key={product.name}
-            />
+            <motion.div
+              style={{
+                x: translateXReverse,
+              }}
+              whileHover={{
+                y: -30,
+              }}
+              key={product.id}
+              className="group/product h-96 w-[24rem] relative flex-shrink-0"
+            >
+              <Image
+                src={product.path}
+                height="200" // Adjusted size
+                width="200" // Adjusted size
+                className="object-cover object-center absolute h-10% w-10% inset-0"
+                alt={product.name}
+              />
+              <div className="absolute inset-0 h-full w-full opacity-0 group-hover:pointer-events-none"></div>
+              <h2 className="absolute bottom-4 left-4 opacity-0 group-hover/product:opacity-100 text-white">
+                {product.name}
+              </h2>
+            </motion.div>
           ))}
         </motion.div>
         <motion.div className="flex flex-row-reverse space-x-reverse space-x-20">
           {thirdRow.map((product) => (
-            <ProductCard
-              product={product}
-              translate={translateX}
-              key={product.path}
-            />
+            <motion.div
+              style={{
+                x: translateX,
+              }}
+              whileHover={{
+                y: -30,
+              }}
+              key={product.id}
+              className="group/product h-96 w-[24rem] relative flex-shrink-0"
+            >
+              <Image
+                src={product.path}
+                height="200" // Adjusted size
+                width="200" // Adjusted size
+                className="object-cover object-center absolute h-10% w-10% inset-0"
+                alt={product.name}
+              />
+              <div className="absolute inset-0 h-full w-full opacity-0 group-hover:pointer-events-none"></div>
+              <h2 className="absolute bottom-4 left-4 opacity-0 group-hover/product:opacity-100 text-white">
+                {product.name}
+              </h2>
+            </motion.div>
           ))}
         </motion.div>
       </motion.div>
@@ -136,11 +185,34 @@ export const HeroParallax = ({
   );
 };
 
-
 export const Header = () => {
+  const controlsLeft = useAnimation();
+  const controlsRight = useAnimation();
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+
+  useEffect(() => {
+    if (isInView) {
+      controlsLeft.start({
+        x: 0,
+        opacity: 1,
+        transition: { duration: 1, ease: "easeInOut" },
+      });
+      controlsRight.start({
+        x: 0,
+        opacity: 1,
+        transition: { duration: 1, ease: "easeInOut" },
+      });
+    }
+  }, [isInView, controlsLeft, controlsRight]);
+
   return (
-    <div className="max-w-7xl mx-auto py-20 md:py-40 px-4 flex flex-col md:flex-row justify-between items-center w-full">
-      <div className="flex-1 text-container">
+    <div ref={ref} className="max-w-7xl mx-auto py-20 md:py-40 px-4 flex flex-col md:flex-row justify-between items-center w-full relative z-30">
+      <motion.div
+        initial={{ x: -100, opacity: 0 }}
+        animate={controlsLeft}
+        className="flex-1 text-container relative z-30"
+      >
         <h1 className="centered-heading text-2xl md:text-7xl font-bold dark:text-white">
           YOSEPH <br /> LATIF
         </h1>
@@ -160,8 +232,13 @@ export const Header = () => {
           childhood. I have embraced every challenge software engineering has
           presented and I look forward to countless more.
         </p>
-      </div>
-      <div className="flex-1 flex justify-center md:justify-end">
+      </motion.div>
+      <motion.div
+        initial={{ x: 100, opacity: 0 }}
+        animate={controlsRight}
+        className="flex-1 flex justify-center md:justify-end relative z-30"
+        style={{ marginTop: "-20px" }} // Adjust as needed for overlap
+      >
         <Image
           src="/yosimg.jpeg"
           alt="Profile Picture"
@@ -169,48 +246,8 @@ export const Header = () => {
           height={488}
           className="rounded-full hover:brightness-110 transition-all duration-300"
         />
-      </div>
+      </motion.div>
     </div>
   );
 };
 
-
-
-
-export const ProductCard = ({
-  product,
-  translate,
-}: {
-  product: {
-    id: number;
-    name: string;
-    path: string;
-  };
-  translate: MotionValue<number>;
-}) => {
-  return (
-    <motion.div
-      style={{
-        x: translate,
-      }}
-      whileHover={{
-        y: -30,
-      }}
-      key={product.id}
-      className="group/product h-96 w-[24rem] relative flex-shrink-0"
-    >
-      <Image
-        src={product.path}
-        height="200" // Adjusted size
-        width="200" // Adjusted size
-        className="object-cover object-center absolute h-10% w-10% inset-0"
-        alt={product.name}
-      />
-
-      <div className="absolute inset-0 h-full w-full opacity-0 group-hover/ pointer-events-none"></div>
-      <h2 className="absolute bottom-4 left-4 opacity-0 group-hover/product:opacity-100 text-white">
-        {/* {product.name} */}
-      </h2>
-    </motion.div>
-  );
-};

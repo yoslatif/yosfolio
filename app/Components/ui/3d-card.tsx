@@ -1,7 +1,4 @@
-"use client";
-
 import { cn } from "@/utils/cn";
-import Image from "next/image";
 import React, {
   createContext,
   useState,
@@ -28,13 +25,10 @@ export const CardContainer = ({
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!containerRef.current) return;
-    const { left, top, width, height } =
-      containerRef.current.getBoundingClientRect();
-    const x = -(e.clientX - left - width / 2) / 55; // Invert the sign and adjust sensitivity
-    const y = -(e.clientY - top - height / 2) / 55; // Invert the sign and adjust sensitivity
-    containerRef.current.style.transform = `rotateY(${x}deg) rotateX(${y}deg)`;
+    const { left, width } = containerRef.current.getBoundingClientRect();
+    const x = -(e.clientX - left - width / 2) / 55;
+    containerRef.current.style.transform = `rotateY(${x}deg) rotateX(0deg)`;
   };
-  
 
   const handleMouseEnter = (e: React.MouseEvent<HTMLDivElement>) => {
     setIsMouseEntered(true);
@@ -46,13 +40,11 @@ export const CardContainer = ({
     setIsMouseEntered(false);
     containerRef.current.style.transform = `rotateY(0deg) rotateX(0deg)`;
   };
+
   return (
     <MouseEnterContext.Provider value={[isMouseEntered, setIsMouseEntered]}>
       <div
-        className={cn(
-          "py-20 items-center justify-center",
-          containerClassName
-        )}
+        className={cn("py-20 items-center justify-center", containerClassName)}
         style={{
           perspective: "5000px",
         }}
@@ -63,7 +55,7 @@ export const CardContainer = ({
           onMouseMove={handleMouseMove}
           onMouseLeave={handleMouseLeave}
           className={cn(
-            "grid grid-cols-2 gap-2 justify-center relative transition-all duration-200 ease-linear",
+            "grid grid-cols-1 gap-2 justify-center relative transition-all duration-200 ease-linear",
             className
           )}
           style={{
@@ -129,7 +121,7 @@ export const CardItem = ({
   const handleAnimations = () => {
     if (!ref.current) return;
     if (isMouseEntered) {
-      ref.current.style.transform = `translateX(${translateX}px) translateY(${translateY}px) translateZ(${translateZ}px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) rotateZ(${rotateZ}deg)`;
+      ref.current.style.transform = `translateX(${translateX}px) translateY(${translateY}px) translateZ(${translateZ}px) rotateX(0deg) rotateY(${rotateY}deg) rotateZ(${rotateZ}deg)`;
     } else {
       ref.current.style.transform = `translateX(0px) translateY(0px) translateZ(0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg)`;
     }
@@ -140,6 +132,7 @@ export const CardItem = ({
       ref={ref}
       className={cn("w-fit transition duration-100 ease-linear", className)}
       {...rest}
+      style={{ zIndex: 1, pointerEvents: 'auto' }}
     >
       {children}
     </Tag>

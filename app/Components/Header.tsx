@@ -3,6 +3,11 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import ResumeModal from "./ResumeModal";
+import { FaInstagram, FaLinkedin, FaGithub } from "react-icons/fa"; // For social media icons
+import { MdEmail } from "react-icons/md"; // For the email icon
+import { AiOutlineCalendar } from "react-icons/ai"; // For the calendar icon
+import { LiaLinkedin } from "react-icons/lia";
+import { BsGithub } from "react-icons/bs";
 
 const Header = () => {
   const [isResumeModalOpen, setIsResumeModalOpen] = useState(false);
@@ -30,7 +35,7 @@ const Header = () => {
   };
 
   return (
-    <header className="bg-white shadow-sm">
+    <header className="bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-100% shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-6 md:justify-start md:space-x-10">
           {/* Logo or Profile Image */}
@@ -48,10 +53,8 @@ const Header = () => {
                   height={70}
                   className="rounded-full"
                 />
-
               </div>
             </Link>
-            
           </div>
 
           <audio id="backgroundMusic" loop>
@@ -59,75 +62,66 @@ const Header = () => {
             Your browser does not support the audio element.
           </audio>
 
+          {/* Centered Name */}
+          <div className="flex-grow text-center">
+            <h1 className="text-4xl font-bold font-dancing-script text-white handwritten-animation">
+              Yoseph Latif
+            </h1>
+          </div>
+
           {/* Navigation Links */}
           <nav className="hidden md:flex space-x-10">
             <div className="flex-grow">
-        <div className="flex justify-center space-x-10">
-              <Link
-                href="https://www.linkedin.com/in/yoseph-latif/"
-                className="text-blue-500 glow-on-hover"
-              >
-                {" "}
-                <Image
-                  src="/linkedinLogo.png"
-                  alt="linkedinLogo"
-                  width={40}
-                  height={40}
-                  className="rounded-full"
-                />{" "}
-              </Link>{" "}
-              <Link
-                href="https://github.com/yoslatif"
-                className="text-blue-500 glow-on-hover"
-              >
-                {" "}
-                <Image
-                  src="/githubLogo.png"
-                  alt="gitHubLogo"
-                  width={40}
-                  height={40}
-                  className="rounded-full"
-                />{" "}
-              </Link>{" "}
-              <Link
-                href="https://www.instagram.com/yosdefinitely/"
-                className="text-blue-500 glow-on-hover"
-              >
-                {" "}
-                <Image
-                  src="/IGpng.png"
-                  alt="instaLogo"
-                  width={43}
-                  height={43}
-                  className="rounded-full"
-                />{" "}
-              </Link>{" "}
-              <Link href="mailto:yoslatif@gmail.com" className="text-blue-500 glow-on-hover">
-                {" "}
-                <Image
-                  src="/emailLogo.png"
-                  alt="emailLogo"
-                  width={40}
-                  height={40}
-                  className="rounded-full"
-                />{" "}
-              </Link>
-            </div>
+              <div className="flex justify-center items-center space-x-4">
+                <a
+                  href="https://www.instagram.com/yosdefinitely/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FaInstagram className="hover:text-pink-500 hover:scale-150 hover:transition-all hover:duration-300 hover:ease-in-out h-14 w-14" />
+                </a>
+                <a href="mailto:yoslatif@gmail.com">
+                  <MdEmail className="hover:text-teal-500 hover:scale-150 hover:transition-all hover:duration-300 hover:ease-in-out h-14 w-14" />
+                </a>
+                <a
+                  href="https://calendly.com/yoslatif"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <AiOutlineCalendar className="hover:text-purple-500 hover:scale-150 hover:transition-all hover:duration-300 hover:ease-in-out h-14 w-14" />
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/yoseph-latif/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-green-500"
+                >
+                  <LiaLinkedin className="hover:text-blue-500 hover:scale-150 hover:transition-all hover:duration-300 hover:ease-in-out h-14 w-14" />
+                </a>
+                <a
+                  href="https://github.com/yoslatif"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-green-500"
+                >
+                  <BsGithub className="hover:text-gray-500 hover:scale-150 hover:transition-all hover:duration-300 hover:ease-in-out h-12 w-12" />
+                </a>
+              </div>
             </div>
           </nav>
 
           {/* Call-to-Action Button */}
-          <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
-          <Link
+          <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0 gap-3">
+            <Link
               href="/"
-              className="text-base font-medium text-gray-500 hover:text-gray-900"
+              className="text-base font-medium text-white-500 hover:text-gray-900 hover:scale-150 hover:transition-all hover:duration-300 hover:ease-in-out"
             >
               Projects
             </Link>
-            <div className="text-gray=500"> | | | </div>
+            <div className="text-gray=500"> <br></br> </div>
             <button
               onClick={openResumeModal}
-              className="whitespace-nowrap text-base font-medium text-gray-500 hover:text-gray-900"
+              className="whitespace-nowrap text-base font-medium text-white-500 hover:text-gray-900 hover:scale-150 hover:transition-all hover:duration-300 hover:ease-in-out"
             >
               Resume
             </button>
@@ -135,6 +129,91 @@ const Header = () => {
         </div>
       </div>
       <ResumeModal isOpen={isResumeModalOpen} onClose={closeResumeModal} />
+      <style jsx>{`
+        // @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+        // .font-dancing-script {
+        //   font-family: 'Dancing Script', cursive;
+        // }
+        // .handwritten-animation {
+        //   position: relative;
+        //   padding-bottom: 0.1em;
+        //   animation: handwriting 3s steps(190) forwards, blink-cursor 1.2s step-end infinite;
+        //   white-space: nowrap;
+        //   overflow: hidden;
+        //   border-right: 0.1em solid white; /* The cursor */
+        // }
+        // .handwritten-animation::after {
+        //   content: '♘';
+        //   position: absolute;
+        //   bottom: 0;
+        //   right: 0;
+        //   width: 0.1em;
+        //   height: 1em;
+        //   background-color: transparent;
+        //   animation: blink-cursor 0.9s step-end infinite;
+        // }
+        // // .handwritten-animation::after {
+        // //   content: '✍️'; /* Replace this with your desired emoji */
+        // //   position: absolute;
+        // //   bottom: 0;
+        // //   right: 0;
+        // //   margin-left: 5px;
+        // //   animation: blink-cursor 0.75s step-end infinite;
+        // // }
+        // @keyframes handwriting {
+        //   from {
+        //     width: 0;
+        //   }
+        //   to {
+        //     width: 100%;
+        //   }
+        // }
+        // @keyframes blink-cursor {
+        //   from, to {
+        //     border-color: transparent;
+        //   }
+        //   50% {
+        //     border-color: white;
+        //   }
+        // }
+
+
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+        .font-dancing-script {
+          font-family: 'Dancing Script', cursive;
+        }
+        .handwritten-animation {
+          position: relative;
+          padding-bottom: 0.1em;
+          animation: handwriting 0.6s steps(700) forwards;
+          white-space: nowrap;
+          overflow: hidden;
+        }
+        .handwritten-animation::after {
+          content: ''; /* Replace this with your desired emoji */
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          margin-right: 10px;
+          animation: blink-cursor 2.5s step-end infinite;
+        }
+        @keyframes handwriting {
+          from {
+            width: 0;
+          }
+          to {
+            width: 100%;
+          }
+        }
+        @keyframes blink-cursor {
+          from, to {
+            opacity: 1;
+          }
+          50% {
+            opacity: 0;
+          }
+        }
+      `}</style>
     </header>
   );
 };
