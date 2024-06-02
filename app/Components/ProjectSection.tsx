@@ -23,7 +23,7 @@ const projects = [
     title: "Philosophize",
     description: "A philosophical debate platform built with a PostgreSQL Flask backend and a React frontend. Users can create and join debates on a variety of topics, and engage in thoughtful discussions with other users. There is only one topic per day to keep a focused topic and prevent doom-scrolling.",
     technologies: ["React", "Flask", "JavaScript", "HTML", "CSS"],
-    images: ["/PhilosophizeImg.png", "/Philosophize1.png", "/Philosophize2.png", "/Philosophize3.png"],
+    images: ["/PhilosophizeImg.png", "/philosophize1.png", "/philosophize2.png", "/philosophize3.png"],
     link: "https://philosophize.onrender.com/",
     gitlink: "https://github.com/yoslatif/philosophize"
   },
