@@ -6,7 +6,7 @@ import {
   useTransform,
   useSpring,
   useAnimation,
-  useInView
+  useInView,
 } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
@@ -90,7 +90,7 @@ export const HeroParallax = ({
     <div
       ref={ref}
       className="h-[165vh] py-50 antialiased relative flex flex-col self-auto [perspective:800px] [transform-style:preserve-3d]"
-      style={{ zIndex: -10 }} // Ensure the parallax container is behind everything
+      style={{ zIndex: -10 }}
     >
       <Header />
       <motion.div
@@ -100,7 +100,7 @@ export const HeroParallax = ({
           translateY,
           opacity,
         }}
-        className=""
+        className="parallax-container"
       >
         <motion.div className="flex flex-row-reverse space-x-reverse space-x-20 mb-20">
           {firstRow.map((product) => (
@@ -181,6 +181,13 @@ export const HeroParallax = ({
           ))}
         </motion.div>
       </motion.div>
+      <style jsx>{`
+        @media (max-width: 768px) {
+          .parallax-container {
+            display: none;
+          }
+        }
+      `}</style>
     </div>
   );
 };

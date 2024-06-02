@@ -118,6 +118,9 @@ const Header = () => {
             >
               Projects
             </Link>
+            <div className="absolute left-0 top-8 mt-2 text-sm text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
+                Skip to the fun stuff!
+              </div>
             <div className="text-gray=500"> <br></br> </div>
             <button
               onClick={openResumeModal}
@@ -125,6 +128,9 @@ const Header = () => {
             >
               Resume
             </button>
+            <div className="absolute left-0 top-8 mt-2 text-sm text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
+                A formal introduction!
+              </div>
           </div>
         </div>
       </div>
