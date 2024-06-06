@@ -3,6 +3,7 @@ import React from 'react';
 import Header from "./Components/Header";
 import ProjectsSection from './Components/ProjectSection';
 import AboutSection from "./Components/AboutSection";
+import BookComponent from './Components/BookComponent';
 
 import './Styles/globals.css';
 import Footer from './Components/Footer';
