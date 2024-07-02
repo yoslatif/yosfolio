@@ -90,7 +90,7 @@ export const HeroParallax = ({
     <div
       ref={ref}
       className="h-[165vh] py-50 antialiased relative flex flex-col self-auto [perspective:800px] [transform-style:preserve-3d] overflow-hidden"
-      style={{ zIndex: -10 }}
+      style={{ zIndex: 1, overflow: "hidden", paddingTop: "100px", paddingBottom: "100px" }} // Adjusted zIndex and padding
     >
       <Header />
       <motion.div
@@ -105,15 +105,13 @@ export const HeroParallax = ({
         <motion.div className="flex flex-row-reverse space-x-reverse space-x-20 mb-20">
           {firstRow.map((product) => (
             <motion.div
-              style={{
-                x: translateX,
-              }}
-              whileHover={{
-                y: -30,
-              }}
-              key={product.id}
-              className="group/product h-96 w-[24rem] relative flex-shrink-0"
-            >
+            whileHover={{
+              y: -30,
+            }}
+            key={product.id}
+            className="group/product h-96 w-[24rem] relative flex-shrink-0"
+            style={{ x: translateX, zIndex: 2 }} // Adjusted zIndex for parallax items
+          >
               <Image
                 src={product.path}
                 height="200" // Adjusted size
