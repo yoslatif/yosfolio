@@ -237,3 +237,8 @@ body {
   background-color: black;
   color: white;
 }
+
+.container {
+  max-width: 100%;
+  overflow-x: hidden;
+}

@@ -32,7 +32,7 @@ const projects = [
     title: "YosBnb",
     description: "AirBnb clone built using Node JS, React, and SQL. Project includes a strong demonstration of authentication features, booking, and review features, and a sleek design which imitates AirBnb's UI (one of my personal favorites) as close as possible.",
     technologies: ["React", "Node.js", "JavaScript", "SQL", "CSS", "HTML"],
-    images: ["/yosbnb1.png", "/yosbnb2.png", "/yosbnb3.png", "/yosbnb4.png", "/yosbnb5.png",],
+    images: ["/yosbnb1.png", "/yosbnb2.png", "/yosbnb3.png", "/yosbnb4.png", "/yosbnb5.png"],
     link: "https://yosauthme.onrender.com/",
     gitlink: "https://github.com/yoslatif/AirBnb"
   },
@@ -41,7 +41,7 @@ const projects = [
     title: "Green Gains Fitness",
     description: "A fitness app that allows users to track their workouts and nutrition. Users can create custom workouts, track their progress, and view their workout history. The app also includes a nutrition tracker that allows users to log their meals and track their macronutrient intake.",
     technologies: ["React", "NextJS", "TypeScript", "CSS", "HTML", "Taildwind"],
-    images: [],
+    images: ["/greenGainsUno.png", "/greenGainsDos.png", "/greenGainsTres.png"],
     link: "https://green-gains-blush.vercel.app/",
     gitlink: "https://github.com/yoslatif/greenGains"
   }
