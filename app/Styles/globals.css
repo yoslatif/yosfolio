@@ -242,3 +242,28 @@ body {
   max-width: 100%;
   overflow-x: hidden;
 }
+
+.image-container {
+  display: inline-block;
+  border-radius: 100%; 
+}
+
+.image-container .glow-on-hover {
+  animation: rotateImage 3s linear infinite;
+  box-shadow: 0 0 8px #00f0ff, 0 0 12px #00f0ff, 0 0 16px #00f0ff, 0 0 20px #00f0ff, 0 0 24px #00f0ff, 0 0 28px #00f0ff;
+}
+
+@keyframes rotateImage {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.glow-on-hover {
+  box-shadow: 0 0 8px #00f0ff, 0 0 12px #00f0ff, 0 0 16px #00f0ff;
+  transition: box-shadow 1s ease-in-out;
+  border-radius: 50%;
+}
