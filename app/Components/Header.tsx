@@ -225,3 +225,342 @@ const Header = () => {
 };
 
 export default Header;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// "use client";
+// import React, { useState, useEffect } from "react";
+// import Image from "next/image";
+// import Link from "next/link";
+// import ResumeModal from "./ResumeModal";
+// import { FaInstagram, FaLinkedin, FaGithub } from "react-icons/fa";
+// import { MdEmail } from "react-icons/md";
+// import { AiOutlineCalendar } from "react-icons/ai";
+// import { LiaLinkedin } from "react-icons/lia";
+// import { BsGithub } from "react-icons/bs";
+
+// const Header = () => {
+//   const [isResumeModalOpen, setIsResumeModalOpen] = useState(false);
+//   const [isTransparent, setIsTransparent] = useState(false);
+
+//   const openResumeModal = () => setIsResumeModalOpen(true);
+//   const closeResumeModal = () => setIsResumeModalOpen(false);
+
+//   const handleScroll = () => {
+//     const scrollY = window.scrollY;
+//     if (scrollY > 100) { // Adjust this value as needed
+//       setIsTransparent(true);
+//     } else {
+//       setIsTransparent(false);
+//     }
+//   };
+
+//   useEffect(() => {
+//     window.addEventListener('scroll', handleScroll);
+//     return () => {
+//       window.removeEventListener('scroll', handleScroll);
+//     };
+//   }, []);
+
+//   const playMusic = () => {
+//     const audio = document.getElementById("backgroundMusic") as HTMLAudioElement | null;
+//     if (audio) {
+//       audio.play();
+//     }
+//   };
+
+//   const stopMusic = () => {
+//     const audio = document.getElementById("backgroundMusic") as HTMLAudioElement | null;
+//     if (audio) {
+//       audio.pause();
+//       audio.currentTime = 0;
+//     }
+//   };
+
+//   return (
+//     <header className={`sticky-header ${isTransparent ? 'transparent' : ''}`}>
+//       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+//         <div className={`flex justify-between items-center ${isTransparent ? 'py-4' : 'py-6'}`}>
+//           <div
+//             className="image-container logo"
+//             onMouseEnter={playMusic}
+//             onMouseLeave={stopMusic}
+//           >
+//             <Link href="/">
+//               <div className="glow-on-hover rounded-full cursor-pointer">
+//                 <Image
+//                   src="/yoslogosamp.webp"
+//                   alt="Yoseph Latif"
+//                   width={70}
+//                   height={70}
+//                   className={`rounded-full ${isTransparent ? 'w-12 h-12' : 'w-16 h-16'}`}
+//                 />
+//               </div>
+//             </Link>
+//           </div>
+
+//           <audio id="backgroundMusic" loop>
+//             <source src="/CarelessWhisper.mp3" type="audio/mpeg" />
+//             Your browser does not support the audio element.
+//           </audio>
+
+//           <div className="flex-grow text-center">
+//             <h1 className={`font-bold font-dancing-script text-white handwritten-animation ${isTransparent ? 'text-2xl' : 'text-4xl'}`}>
+//               Yoseph Latif
+//             </h1>
+//           </div>
+
+//           <nav className="hidden md:flex space-x-10">
+//             <div className="flex-grow">
+//               <div className="flex justify-center items-center space-x-4">
+//                 <a
+//                   href="https://www.instagram.com/yosdefinitely/"
+//                   target="_blank"
+//                   rel="noopener noreferrer"
+//                 >
+//                   <FaInstagram className={`hover:text-pink-500 hover:scale-150 hover:transition-all hover:duration-300 hover:ease-in-out h-${isTransparent ? '10' : '14'} w-${isTransparent ? '10' : '14'}`} />
+//                 </a>
+//                 <a href="mailto:yoslatif@gmail.com">
+//                   <MdEmail className={`hover:text-teal-500 hover:scale-150 hover:transition-all hover:duration-300 hover:ease-in-out h-${isTransparent ? '10' : '14'} w-${isTransparent ? '10' : '14'}`} />
+//                 </a>
+//                 <a
+//                   href="https://calendly.com/yoslatif"
+//                   target="_blank"
+//                   rel="noopener noreferrer"
+//                 >
+//                   <AiOutlineCalendar className={`hover:text-purple-500 hover:scale-150 hover:transition-all hover:duration-300 hover:ease-in-out h-${isTransparent ? '10' : '14'} w-${isTransparent ? '10' : '14'}`} />
+//                 </a>
+//                 <a
+//                   href="https://www.linkedin.com/in/yoseph-latif/"
+//                   target="_blank"
+//                   rel="noopener noreferrer"
+//                   className="hover:text-green-500"
+//                 >
+//                   <LiaLinkedin className={`hover:text-blue-500 hover:scale-150 hover:transition-all hover:duration-300 hover:ease-in-out h-${isTransparent ? '10' : '14'} w-${isTransparent ? '10' : '14'}`} />
+//                 </a>
+//                 <a
+//                   href="https://github.com/yoslatif"
+//                   target="_blank"
+//                   rel="noopener noreferrer"
+//                   className="hover:text-green-500"
+//                 >
+//                   <BsGithub className={`hover:text-gray-500 hover:scale-150 hover:transition-all hover:duration-300 hover:ease-in-out h-${isTransparent ? '9' : '12'} w-${isTransparent ? '9' : '12'}`} />
+//                 </a>
+//               </div>
+//             </div>
+//           </nav>
+
+//           <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0 gap-3">
+//             <Link
+//               href="/"
+//               className="text-base font-medium text-white-500 hover:text-gray-900 hover:scale-150 hover:transition-all hover:duration-300 hover:ease-in-out"
+//             >
+//               Projects
+//             </Link>
+//             <div className="text-gray=500"> <br></br> </div>
+//             <button
+//               onClick={openResumeModal}
+//               className="whitespace-nowrap text-base font-medium text-white-500 hover:text-gray-900 hover:scale-150 hover:transition-all hover:duration-300 hover:ease-in-out"
+//             >
+//               Resume
+//             </button>
+//           </div>
+//         </div>
+//       </div>
+//       <ResumeModal isOpen={isResumeModalOpen} onClose={closeResumeModal} />
+//     </header>
+//   );
+// };
+
+// export default Header;
+
+
+
+
+
+
+
+
+
+
+
+// "use client";
+// import React, { useState, useEffect } from "react";
+// import Image from "next/image";
+// import Link from "next/link";
+// import ResumeModal from "./ResumeModal";
+// import { FaInstagram, FaLinkedin, FaGithub } from "react-icons/fa";
+// import { MdEmail } from "react-icons/md";
+// import { AiOutlineCalendar } from "react-icons/ai";
+// import { LiaLinkedin } from "react-icons/lia";
+// import { BsGithub } from "react-icons/bs";
+
+// const Header = () => {
+//   const [isResumeModalOpen, setIsResumeModalOpen] = useState(false);
+//   const [isTransparent, setIsTransparent] = useState(false);
+//   const [isShrunk, setIsShrunk] = useState(false);
+
+//   const openResumeModal = () => setIsResumeModalOpen(true);
+//   const closeResumeModal = () => setIsResumeModalOpen(false);
+
+//   const playMusic = () => {
+//     const audio = document.getElementById(
+//       "backgroundMusic"
+//     ) as HTMLAudioElement | null;
+//     if (audio) {
+//       audio.play();
+//     }
+//   };
+
+//   const stopMusic = () => {
+//     const audio = document.getElementById(
+//       "backgroundMusic"
+//     ) as HTMLAudioElement | null;
+//     if (audio) {
+//       audio.pause();
+//       audio.currentTime = 0;
+//     }
+//   };
+
+//   const handleScroll = () => {
+//     if (window.scrollY > 50) {
+//       setIsTransparent(true);
+//       setIsShrunk(true);
+//     } else {
+//       setIsTransparent(false);
+//       setIsShrunk(false);
+//     }
+//   };
+
+//   useEffect(() => {
+//     window.addEventListener('scroll', handleScroll);
+//     return () => {
+//       window.removeEventListener('scroll', handleScroll);
+//     };
+//   }, []);
+
+//   return (
+//     <header 
+//       className={`fixed top-0 left-0 w-full transition-all duration-300 z-50 ${isShrunk ? 'py-3 bg-transparent' : 'py-6 bg-gradient-to-r from-indigo-500 via-sky-500 to-emerald-500'} ${isTransparent && !isShrunk ? 'bg-transparent' : ''}`}
+//     >
+//       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+//         <div className="flex justify-between items-center md:justify-start md:space-x-10">
+//           {/* Logo or Profile Image */}
+//           <div
+//             className="image-container"
+//             onMouseEnter={playMusic}
+//             onMouseLeave={stopMusic}
+//           >
+//             <Link href="/">
+//               <div className="glow-on-hover rounded-full cursor-pointer">
+//                 <Image
+//                   src="/yoslogosamp.webp"
+//                   alt="Yoseph Latif"
+//                   width={70}
+//                   height={70}
+//                   className="rounded-full"
+//                 />
+//               </div>
+//             </Link>
+//           </div>
+
+//           <audio id="backgroundMusic" loop>
+//             <source src="/CarelessWhisper.mp3" type="audio/mpeg" />
+//             Your browser does not support the audio element.
+//           </audio>
+
+//           {/* Centered Name */}
+//           <div className="flex-grow text-center">
+//             <h1 className={`text-4xl font-bold font-dancing-script handwritten-animation text-white transition-transform duration-300 ${isShrunk ? 'text-3xl' : 'text-4xl'}`}>
+//               Yoseph Latif
+//             </h1>
+//           </div>
+
+//           {/* Navigation Links */}
+//           <nav className="hidden md:flex space-x-10">
+//             <div className="flex-grow">
+//               <div className="flex justify-center items-center space-x-4">
+//                 <a
+//                   href="https://www.instagram.com/yosdefinitely/"
+//                   target="_blank"
+//                   rel="noopener noreferrer"
+//                 >
+//                   <FaInstagram className="hover:text-pink-500 hover:scale-150 hover:transition-all hover:duration-300 hover:ease-in-out h-14 w-14" />
+//                 </a>
+//                 <a href="mailto:yoslatif@gmail.com">
+//                   <MdEmail className="hover:text-teal-500 hover:scale-150 hover:transition-all hover:duration-300 hover:ease-in-out h-14 w-14" />
+//                 </a>
+//                 <a
+//                   href="https://calendly.com/yoslatif"
+//                   target="_blank"
+//                   rel="noopener noreferrer"
+//                 >
+//                   <AiOutlineCalendar className="hover:text-purple-500 hover:scale-150 hover:transition-all hover:duration-300 hover:ease-in-out h-14 w-14" />
+//                 </a>
+//                 <a
+//                   href="https://www.linkedin.com/in/yoseph-latif/"
+//                   target="_blank"
+//                   rel="noopener noreferrer"
+//                   className="hover:text-green-500"
+//                 >
+//                   <LiaLinkedin className="hover:text-blue-500 hover:scale-150 hover:transition-all hover:duration-300 hover:ease-in-out h-14 w-14" />
+//                 </a>
+//                 <a
+//                   href="https://github.com/yoslatif"
+//                   target="_blank"
+//                   rel="noopener noreferrer"
+//                   className="hover:text-green-500"
+//                 >
+//                   <BsGithub className="hover:text-gray-500 hover:scale-150 hover:transition-all hover:duration-300 hover:ease-in-out h-12 w-12" />
+//                 </a>
+//               </div>
+//             </div>
+//           </nav>
+
+//           {/* Call-to-Action Button */}
+//           <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0 gap-3">
+//             <Link
+//               href="/"
+//               className="text-base font-medium text-white-500 hover:text-gray-900 hover:scale-150 hover:transition-all hover:duration-300 hover:ease-in-out"
+//             >
+//               Projects
+//             </Link>
+//             <div className="text-gray=500"> <br></br> </div>
+//             <button
+//               onClick={openResumeModal}
+//               className="whitespace-nowrap text-base font-medium text-white-500 hover:text-gray-900 hover:scale-150 hover:transition-all hover:duration-300 hover:ease-in-out"
+//             >
+//               Resume
+//             </button>
+//           </div>
+//         </div>
+//       </div>
+//       <ResumeModal isOpen={isResumeModalOpen} onClose={closeResumeModal} />
+//     </header>
+//   );
+// };
+
+// export default Header;
