@@ -18,7 +18,7 @@ interface ResumeModalProps {
     return (
       <div className="modal-backdrop" onClick={handleBackdropClick}>
         <div className="modal-content">
-          <iframe src="/ResumeJuly2024.pdf" frameBorder="0" width="100%" height="100%"></iframe>
+          <iframe src="/resume_no_projects.pdf" frameBorder="0" width="100%" height="100%"></iframe>
         </div>
   
         <style jsx>{`
